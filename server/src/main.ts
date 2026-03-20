@@ -6,13 +6,13 @@ import express from 'express';
 import serverlessExpress from '@vendia/serverless-express';
 
 const expressApp = express();
+let cachedHandler: ReturnType<typeof serverlessExpress>;
 
-async function createNestServer() {
+async function bootstrap() {
   const app = await NestFactory.create(
     AppModule,
     new ExpressAdapter(expressApp),
   );
-
   app.setGlobalPrefix('api');
 
   app.enableCors({
@@ -31,11 +31,15 @@ async function createNestServer() {
 
   await app.init();
 
-  return expressApp;
+  cachedHandler = serverlessExpress({ app: expressApp });
 }
 
-export const handler = async (req: any, res: any) => {
-  const app = await createNestServer();
+bootstrap();
 
-  return serverlessExpress({ app })(req, res);
+export const handler = async (req: any, res: any) => {
+  if (!cachedHandler) {
+    await bootstrap();
+  }
+
+  return cachedHandler(req, res);
 };
