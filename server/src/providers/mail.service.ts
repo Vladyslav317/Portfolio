@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Resend } from 'resend';
-import { SendContactMailDto } from 'src/modules/contact/dtos/send-contact-mail.dto';
+import { SendContactMailDto } from '../modules/contact/dtos/send-contact-mail.dto';
 
 @Injectable()
 export class MailService {
