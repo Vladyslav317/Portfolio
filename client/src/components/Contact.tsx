@@ -9,13 +9,16 @@ export function Contact() {
     e.preventDefault();
     console.log(name, email, message);
 
-    const response = await fetch('/api/contact/send-mail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const response = await fetch(
+      'https://portfolio-backend-silk-six.vercel.app/api/contact/send-mail',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
       },
-      body: JSON.stringify({ name, email, message }),
-    });
+    );
 
     const data = await response.json();
     console.log(data);
