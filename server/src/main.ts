@@ -2,7 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './modules/app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { ExpressAdapter } from '@nestjs/platform-express';
-import express, { Request, Response } from 'express';
+import express from 'express';
+import serverlessExpress from '@vendia/serverless-express';
 
 const expressApp = express();
 
@@ -11,10 +12,11 @@ async function createNestServer() {
     AppModule,
     new ExpressAdapter(expressApp),
   );
+
   app.setGlobalPrefix('api');
 
   app.enableCors({
-    origin: '*',
+    origin: 'https://portfolio-five-mu-bhmnyupuju.vercel.app',
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   });
@@ -28,27 +30,12 @@ async function createNestServer() {
   );
 
   await app.init();
+
+  return expressApp;
 }
 
-let bootstrapPromise = createNestServer();
+export const handler = async (req: any, res: any) => {
+  const app = await createNestServer();
 
-export default async function handler(req: Request, res: Response) {
-  await bootstrapPromise;
-
-  if (req.method === 'OPTIONS') {
-    res.setHeader(
-      'Access-Control-Allow-Origin',
-      'https://portfolio-five-mu-bhmnyupuju.vercel.app',
-    );
-    res.setHeader(
-      'Access-Control-Allow-Methods',
-      'GET,POST,PUT,PATCH,DELETE,OPTIONS',
-    );
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Authorization');
-    res.status(204).send('');
-
-    return;
-  }
-
-  expressApp(req, res);
-}
+  return serverlessExpress({ app })(req, res);
+};
