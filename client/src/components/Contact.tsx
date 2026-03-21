@@ -60,6 +60,7 @@ export function Contact() {
             <div className='space-y-4 sm:space-y-5'>
               <a
                 href='https://mail.google.com/mail/?view=cm&fs=1&to=vladyslav3177@gmail.com'
+                target='_blank'
                 className='flex items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-4 transition-all duration-300 hover:border-[#6366F1] hover:shadow-md dark:border-[#1f2937] dark:bg-[#111827]'
               >
                 <div className='rounded-lg bg-[#6366F1]/10 p-3 text-[#6366F1]'>
