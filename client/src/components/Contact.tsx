@@ -37,7 +37,7 @@ export function Contact() {
       setMessage('');
 
       setTimeout(() => setStatus('idle'), 4000);
-    } catch (err) {
+    } catch {
       setStatus('error');
       setTimeout(() => setStatus('idle'), 4000);
     }
@@ -46,16 +46,18 @@ export function Contact() {
   return (
     <section
       id='contact'
-      className='min-h-screen px-12 py-24 text-gray-900 dark:text-white'
+      className='min-h-screen px-4 py-16 text-gray-900 dark:text-white sm:px-6 sm:py-20 md:px-10 md:py-24 lg:px-16'
     >
-      <div className='mx-auto max-w-5xl'>
-        <h1 className='mb-20 text-center text-4xl font-bold'>
+      <div className='mx-auto max-w-6xl'>
+        <h1 className='mb-12 text-center text-3xl font-bold sm:mb-16 sm:text-4xl md:mb-20 md:text-5xl'>
           Get In <span className='text-[#6366F1]'>Touch</span>
         </h1>
-        <div className='grid grid-cols-1 gap-12 md:grid-cols-[1fr_1.6fr]'>
+        <div className='grid grid-cols-1 items-start gap-8 sm:gap-10 md:gap-12 lg:grid-cols-[1fr_1.5fr]'>
           <div>
-            <h3 className='mb-8 text-xl font-semibold'>Contact Information</h3>
-            <div className='space-y-5'>
+            <h3 className='mb-6 text-lg font-semibold sm:mb-8 sm:text-xl'>
+              Contact Information
+            </h3>
+            <div className='space-y-4 sm:space-y-5'>
               <a
                 href='https://mail.google.com/mail/?view=cm&fs=1&to=vladyslav3177@gmail.com'
                 className='flex items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-4 transition-all duration-300 hover:border-[#6366F1] hover:shadow-md dark:border-[#1f2937] dark:bg-[#111827]'
@@ -73,11 +75,13 @@ export function Contact() {
                     <path d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'></path>
                   </svg>
                 </div>
-                <div>
-                  <p className='text-sm text-gray-500 dark:text-gray-400'>
+                <div className='truncate'>
+                  <p className='text-xs text-gray-500 dark:text-gray-400 sm:text-sm'>
                     Email
                   </p>
-                  <p className='font-medium'>vladyslav3177@gmail.com</p>
+                  <p className='truncate text-sm font-medium sm:text-base'>
+                    vladyslav3177@gmail.com
+                  </p>
                 </div>
               </a>
               <a
@@ -100,51 +104,53 @@ export function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <p className='text-sm text-gray-500 dark:text-gray-400'>
+                  <p className='text-xs text-gray-500 dark:text-gray-400 sm:text-sm'>
                     LinkedIn
                   </p>
-                  <p className='font-medium'>Connect with me</p>
+                  <p className='text-sm font-medium sm:text-base'>
+                    Connect with me
+                  </p>
                 </div>
               </a>
             </div>
           </div>
-          <div className='rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-[#1f2937] dark:bg-[#111827]'>
-            <h3 className='mb-6 text-center text-2xl font-semibold'>
+          <div className='rounded-2xl border border-gray-200 bg-white p-5 shadow-sm dark:border-[#1f2937] dark:bg-[#111827] sm:p-6 md:p-8'>
+            <h3 className='mb-5 text-center text-xl font-semibold sm:mb-6 sm:text-2xl'>
               Send a Message
             </h3>
-            <form onSubmit={handleSubmit} className='space-y-5'>
+            <form onSubmit={handleSubmit} className='space-y-4 sm:space-y-5'>
               <div>
-                <label className='mb-2 block text-sm font-medium text-gray-600 dark:text-gray-400'>
+                <label className='mb-2 block text-xs font-medium text-gray-600 dark:text-gray-400 sm:text-sm'>
                   Your Name
                 </label>
                 <input
                   type='text'
-                  className='w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17]'
+                  className='w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17] sm:py-3 sm:text-base'
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
                 />
               </div>
               <div>
-                <label className='mb-2 block text-sm font-medium text-gray-600 dark:text-gray-400'>
+                <label className='mb-2 block text-xs font-medium text-gray-600 dark:text-gray-400 sm:text-sm'>
                   Your Email
                 </label>
                 <input
                   type='email'
                   placeholder='email@example.com'
-                  className='w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17]'
+                  className='w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17] sm:py-3 sm:text-base'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
               <div>
-                <label className='mb-2 block text-sm font-medium text-gray-600 dark:text-gray-400'>
+                <label className='mb-2 block text-xs font-medium text-gray-600 dark:text-gray-400 sm:text-sm'>
                   Your Message
                 </label>
                 <textarea
                   rows={4}
-                  className='w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17]'
+                  className='w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17] sm:py-3 sm:text-base'
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   required
@@ -153,18 +159,18 @@ export function Contact() {
               <button
                 type='submit'
                 disabled={status === 'loading'}
-                className='w-full rounded-lg bg-[#6366F1] py-3 text-white transition-all duration-300 hover:bg-[#4F46E5] hover:shadow-lg hover:shadow-indigo-500/30 disabled:opacity-50'
+                className='w-full rounded-lg bg-[#6366F1] py-2.5 text-sm text-white transition-all duration-300 hover:bg-[#4F46E5] hover:shadow-lg hover:shadow-indigo-500/30 disabled:opacity-50 sm:py-3 sm:text-base'
               >
                 {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
 
               {status === 'success' && (
-                <p className='mt-2 text-center text-green-500'>
+                <p className='text-center text-sm text-green-500'>
                   Message sent! ✅
                 </p>
               )}
               {status === 'error' && (
-                <p className='mt-2 text-center text-red-500'>
+                <p className='text-center text-sm text-red-500'>
                   Something went wrong
                 </p>
               )}
