@@ -31,7 +31,7 @@ function Skills() {
     filter === 'all' ? data : data.filter((skill) => skill.category === filter);
 
   const buttonBase =
-    'cursor-pointer rounded-full px-5 py-2 text-sm font-medium transition-all duration-300';
+    'cursor-pointer rounded-full px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium transition-all duration-300';
 
   const active = 'bg-[#6366F1] text-white shadow-md shadow-indigo-500/30';
 
@@ -41,12 +41,12 @@ function Skills() {
   return (
     <section
       id='skills'
-      className='min-h-screen px-12 py-24 text-gray-900 dark:text-white'
+      className='min-h-screen px-4 py-16 text-gray-900 dark:text-white sm:px-6 sm:py-20 md:px-10 md:py-24 lg:px-16'
     >
-      <h1 className='mb-20 text-center text-4xl font-bold'>
+      <h1 className='mb-12 text-center text-3xl font-bold sm:mb-16 sm:text-4xl md:mb-20 md:text-5xl'>
         My <span className='text-[#6366F1]'>Skills</span>
       </h1>
-      <div className='mb-12 flex flex-wrap items-center justify-center gap-6'>
+      <div className='mb-10 flex flex-wrap items-center justify-center gap-3 sm:mb-12 sm:gap-4'>
         {['all', 'backend', 'frontend', 'tools'].map((type) => (
           <button
             key={type}
@@ -57,21 +57,20 @@ function Skills() {
           </button>
         ))}
       </div>
-      <div className='mx-auto max-w-5xl'>
-        <div className='grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4'>
+      <div className='mx-auto max-w-6xl'>
+        <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 md:grid-cols-4 md:gap-6 lg:grid-cols-5'>
           {filteredSkills.map((skill, index) => {
             const Icon = skillSvgs[skill.name];
 
             return (
               <div
                 key={index}
-                className='flex flex-col items-center justify-center gap-3 rounded-2xl border border-gray-200 bg-gray-50 p-5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-[#1f2937] dark:bg-[#111827]'
+                className='group flex flex-col items-center justify-center gap-2 rounded-2xl border border-gray-200 bg-gray-50 p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-[#1f2937] dark:bg-[#111827] dark:hover:border-[#6366F1] sm:gap-3 sm:p-5'
               >
-                <div className='flex h-10 w-10 items-center justify-center'>
+                <div className='flex h-8 w-8 items-center justify-center transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10'>
                   {Icon && <Icon />}
                 </div>
-
-                <span className='text-sm font-medium text-gray-700 dark:text-gray-300'>
+                <span className='text-xs font-medium text-gray-700 dark:text-gray-300 sm:text-sm'>
                   {skill.name}
                 </span>
               </div>
