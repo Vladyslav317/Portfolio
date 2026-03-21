@@ -4,24 +4,43 @@ export function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(name, email, message);
 
-    const response = await fetch(
-      'https://portfolio-backend-silk-six.vercel.app/api/contact/send-mail',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    if (!name || !email || !message) {
+      alert('Please fill in all fields.');
+
+      return;
+    }
+
+    setStatus('loading');
+
+    try {
+      const response = await fetch(
+        'https://portfolio-backend-silk-six.vercel.app/api/contact/send-mail',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message }),
         },
-        body: JSON.stringify({ name, email, message }),
-      },
-    );
+      );
 
-    const data = await response.json();
-    console.log(data);
+      if (!response.ok) throw new Error('Network response not ok');
+
+      setStatus('success');
+      setName('');
+      setEmail('');
+      setMessage('');
+
+      setTimeout(() => setStatus('idle'), 4000);
+    } catch (err) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   return (
@@ -103,6 +122,7 @@ export function Contact() {
                   className='w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17]'
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  required
                 />
               </div>
               <div>
@@ -115,6 +135,7 @@ export function Contact() {
                   className='w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17]'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
               <div>
@@ -126,14 +147,27 @@ export function Contact() {
                   className='w-full rounded-lg border border-gray-300 bg-white px-4 py-3 focus:border-[#6366F1] focus:outline-none focus:ring-2 focus:ring-[#6366F1]/20 dark:border-[#1f2937] dark:bg-[#0B0D17]'
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
+                  required
                 />
               </div>
               <button
                 type='submit'
-                className='w-full rounded-lg bg-[#6366F1] py-3 text-white transition-all duration-300 hover:bg-[#4F46E5] hover:shadow-lg hover:shadow-indigo-500/30'
+                disabled={status === 'loading'}
+                className='w-full rounded-lg bg-[#6366F1] py-3 text-white transition-all duration-300 hover:bg-[#4F46E5] hover:shadow-lg hover:shadow-indigo-500/30 disabled:opacity-50'
               >
-                Send Message
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
+
+              {status === 'success' && (
+                <p className='mt-2 text-center text-green-500'>
+                  Message sent! ✅
+                </p>
+              )}
+              {status === 'error' && (
+                <p className='mt-2 text-center text-red-500'>
+                  Something went wrong
+                </p>
+              )}
             </form>
           </div>
         </div>
