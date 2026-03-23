@@ -2,6 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <style>
+      html {
+        visibility: hidden;
+      }
+    </style>
+
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia(
+          '(prefers-color-scheme: dark)',
+        ).matches;
+
+        const isDark = savedTheme ? savedTheme === 'dark' : systemDark;
+
+        const root = document.documentElement;
+
+        if (isDark) {
+          root.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          root.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        }
+
+        root.style.visibility = 'visible';
+      })();
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/node-js.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 

@@ -11,15 +11,13 @@ import Nav from './components/Nav';
 
 function App() {
   const [dark, setDark] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-
-    return savedTheme ? savedTheme === 'dark' : true;
+    return localStorage.getItem('theme') === 'dark';
   });
 
   useEffect(() => {
     localStorage.setItem('theme', dark ? 'dark' : 'light');
 
-    const root = window.document.documentElement;
+    const root = document.documentElement;
 
     if (dark) {
       root.classList.add('dark');

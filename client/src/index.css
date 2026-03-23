@@ -8,8 +8,12 @@
   }
 
   body {
-    @apply font-sans text-white bg-[#020617];
+    @apply bg-white font-sans text-gray-900;
     @apply box-border;
+  }
+
+  .dark body {
+    @apply bg-[#020617] text-white;
   }
 }
 
