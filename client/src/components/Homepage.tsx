@@ -17,7 +17,7 @@ function Homepage() {
             href='#projects'
             className='w-full rounded-xl bg-[#6366F1] px-6 py-3 font-medium text-white transition hover:scale-105 hover:bg-[#4F46E5] sm:w-auto'
           >
-            View Projects
+            View Recent Projects
           </a>
           <a
             href='#contact'
