@@ -75,7 +75,7 @@ function Projects() {
           Featured <span className='text-[#6366F1]'>Projects</span>
         </h2>
         <p className='mb-16 text-center text-sm text-gray-600 dark:text-gray-400'>
-          Projects I contributed to as a backend-focused developer.
+          Recent projects I contributed to as a backend-focused developer.
         </p>
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
           {projects.map((project, index) => (
