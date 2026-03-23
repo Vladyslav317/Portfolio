@@ -95,13 +95,10 @@ export function Contact() {
                     xmlns='http://www.w3.org/2000/svg'
                     width='22'
                     height='22'
-                    fill='none'
-                    stroke='currentColor'
-                    strokeWidth='2'
+                    viewBox='0 0 24 24'
+                    fill='#6366F1'
                   >
-                    <path d='M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z'></path>
-                    <rect width='4' height='12' x='2' y='9'></rect>
-                    <circle cx='4' cy='4' r='2'></circle>
+                    <path d='M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4v14h-4V8zm7.5 0h3.6v1.9h.05c.5-.95 1.7-1.95 3.5-1.95 3.75 0 4.45 2.47 4.45 5.68V22h-4v-7.3c0-1.74-.03-3.98-2.43-3.98-2.43 0-2.8 1.9-2.8 3.85V22h-4V8z' />
                   </svg>
                 </div>
                 <div>
@@ -111,6 +108,53 @@ export function Contact() {
                   <p className='text-sm font-medium sm:text-base'>
                     Connect with me
                   </p>
+                </div>
+              </a>
+              <a
+                href='https://github.com/Vladyslav317'
+                target='_blank'
+                className='flex items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-4 transition-all duration-300 hover:border-[#6366F1] hover:shadow-md dark:border-[#1f2937] dark:bg-[#111827]'
+              >
+                <div className='rounded-lg bg-[#6366F1]/10 p-3 text-[#6366F1]'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='22'
+                    height='22'
+                    fill='currentColor'
+                    viewBox='0 0 24 24'
+                  >
+                    <path d='M12 .5C5.73.5.75 5.48.75 11.75c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.02c-3.2.7-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.67 1.24 3.32.95.1-.74.4-1.24.72-1.52-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.3 1.18-3.11-.12-.29-.51-1.47.11-3.06 0 0 .96-.31 3.15 1.19a10.9 10.9 0 0 1 5.74 0c2.19-1.5 3.15-1.19 3.15-1.19.62 1.59.23 2.77.11 3.06.73.81 1.18 1.85 1.18 3.11 0 4.43-2.69 5.41-5.26 5.69.41.35.77 1.04.77 2.1v3.11c0 .3.21.66.79.55a11.26 11.26 0 0 0 7.85-10.91C23.25 5.48 18.27.5 12 .5z' />
+                  </svg>
+                </div>
+                <div>
+                  <p className='text-sm text-gray-500 dark:text-gray-400'>
+                    GitHub
+                  </p>
+                  <p className='font-medium'>GitHub Profile</p>
+                </div>
+              </a>
+              <a
+                href='https://t.me/Vladyslav317'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-4 transition-all duration-300 hover:border-[#6366F1] hover:shadow-md dark:border-[#1f2937] dark:bg-[#111827]'
+              >
+                <div className='rounded-lg bg-[#6366F1]/10 p-3 text-[#6366F1]'>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='22'
+                    height='22'
+                    viewBox='0 0 24 24'
+                    fill='currentColor'
+                  >
+                    <path d='M9.04 15.47l-.38 5.36c.54 0 .77-.23 1.05-.5l2.52-2.41 5.22 3.82c.96.53 1.64.25 1.9-.89l3.44-16.12h.001c.3-1.39-.5-1.93-1.43-1.58L1.7 9.38c-1.36.53-1.34 1.29-.23 1.63l4.9 1.53L18.36 6.7c.57-.35 1.1-.16.67.19' />
+                  </svg>
+                </div>
+                <div>
+                  <p className='text-xs text-gray-500 dark:text-gray-400 sm:text-sm'>
+                    Telegram
+                  </p>
+                  <p className='text-sm font-medium sm:text-base'>Message me</p>
                 </div>
               </a>
             </div>
