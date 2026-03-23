@@ -14,7 +14,9 @@ export default function ParticlesBackground({ dark }: { dark: boolean }) {
   if (!init) return null;
 
   const backgroundColor = dark ? '#020617' : '#ffffff';
-  const particleColor = dark ? '#818cf8' : '#c7d2fe';
+  const particleColor = dark ? '#818cf8' : '#6366F1';
+  const linkOpacity = dark ? 0.4 : 0.6;
+  const particleOpacity = dark ? 0.6 : 0.7;
 
   return (
     <div
@@ -41,18 +43,18 @@ export default function ParticlesBackground({ dark }: { dark: boolean }) {
               enable: true,
               color: particleColor,
               distance: 160,
-              opacity: dark ? 0.4 : 0.25,
-              width: 1,
+              opacity: linkOpacity,
+              width: 1.5,
             },
             move: {
               enable: true,
               speed: 0.6,
             },
             size: {
-              value: { min: 1, max: 2 },
+              value: { min: 1.5, max: 2.5 },
             },
             opacity: {
-              value: dark ? 0.6 : 0.4,
+              value: particleOpacity,
             },
           },
           interactivity: {
