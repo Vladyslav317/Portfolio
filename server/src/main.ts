@@ -3,6 +3,7 @@ import { AppModule } from './modules/app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import express, { Request, Response } from 'express';
+import { ThrottlerGuard } from '@nestjs/throttler';
 
 const expressApp = express();
 
@@ -26,6 +27,8 @@ async function createNestServer() {
       transform: true,
     }),
   );
+
+  app.useGlobalGuards(app.get(ThrottlerGuard));
 
   await app.init();
 }
