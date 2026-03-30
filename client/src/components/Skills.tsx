@@ -17,6 +17,7 @@ const data = [
   { name: 'BullMQ', category: 'backend' },
   { name: 'Redis', category: 'backend' },
   { name: 'WebSockets', category: 'backend' },
+  { name: 'Jest (Unit, Integration, E2E)', category: 'backend' },
 
   { name: 'Vite', category: 'tools' },
   { name: 'GitHub', category: 'tools' },
