@@ -16,12 +16,15 @@ const data = [
   { name: 'Prisma', category: 'backend' },
   { name: 'BullMQ', category: 'backend' },
   { name: 'Redis', category: 'backend' },
+  { name: 'WebSockets', category: 'backend' },
 
   { name: 'Vite', category: 'tools' },
   { name: 'GitHub', category: 'tools' },
   { name: 'GitLab', category: 'tools' },
   { name: 'Docker', category: 'tools' },
   { name: 'VS Code', category: 'tools' },
+  { name: 'AWS (S3, CI/CD)', category: 'tools' },
+  { name: 'GCP (Cloud Storage)', category: 'tools' },
 ];
 
 function Skills() {
