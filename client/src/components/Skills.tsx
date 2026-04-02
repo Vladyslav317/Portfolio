@@ -26,6 +26,11 @@ const data = [
   { name: 'VS Code', category: 'tools' },
   { name: 'AWS (S3, CI/CD)', category: 'tools' },
   { name: 'GCP (Cloud Storage)', category: 'tools' },
+
+  { name: 'Stability AI', category: 'integrations' },
+  { name: 'Nodemailer', category: 'integrations' },
+  { name: 'PayTabs API', category: 'integrations' },
+  { name: 'SendBird API', category: 'integrations' },
 ];
 
 function Skills() {
@@ -51,7 +56,7 @@ function Skills() {
         My <span className='text-[#6366F1]'>Skills</span>
       </h1>
       <div className='mb-10 flex flex-wrap items-center justify-center gap-3 sm:mb-12 sm:gap-4'>
-        {['all', 'backend', 'frontend', 'tools'].map((type) => (
+        {['all', 'backend', 'frontend', 'tools', 'integrations'].map((type) => (
           <button
             key={type}
             onClick={() => setFilter(type)}
@@ -71,7 +76,7 @@ function Skills() {
                 key={index}
                 className='group flex flex-col items-center justify-center gap-2 rounded-2xl border border-gray-200 bg-gray-50 p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-[#1f2937] dark:bg-[#111827] dark:hover:border-[#6366F1] sm:gap-3 sm:p-5'
               >
-                <div className='flex h-8 w-8 items-center justify-center transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-10'>
+                <div className='flex h-14 w-14 items-center justify-center transition-transform duration-300 group-hover:scale-110 sm:h-16 sm:w-16'>
                   {Icon && <Icon />}
                 </div>
                 <span className='text-xs font-medium text-gray-700 dark:text-gray-300 sm:text-sm'>
