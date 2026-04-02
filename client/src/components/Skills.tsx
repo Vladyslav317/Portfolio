@@ -31,6 +31,7 @@ const data = [
   { name: 'Nodemailer', category: 'integrations' },
   { name: 'PayTabs API', category: 'integrations' },
   { name: 'SendBird API', category: 'integrations' },
+  { name: 'Printful API', category: 'integrations' },
 ];
 
 function Skills() {
