@@ -12,6 +12,7 @@ function Projects() {
         'Prisma',
         'PayTabs',
         'Brevo',
+        'Jest',
       ],
       features: [
         'Applied Domain-Driven Design (DDD) and clean architecture for maintainability and scalability.',
@@ -19,6 +20,7 @@ function Projects() {
         'Implemented email notifications and transactional messaging using Brevo.',
         'Designed REST APIs for booking management, authorization, and admin workflows.',
         'Improved system reliability with validation layers and structured error handling.',
+        'Implemented unit and end-to-end (e2e) testing using Jest to ensure system stability and prevent regressions.',
       ],
     },
     {
@@ -37,6 +39,7 @@ function Projects() {
         'AWS S3',
         'React',
         'Tailwind CSS',
+        'Jest',
       ],
       features: [
         'Developed a custom AdminJS panel with React components for efficient user and group management.',
@@ -44,6 +47,7 @@ function Projects() {
         'Integrated Customer.io for behavior-based email automation (onboarding, reminders, notifications).',
         'Built background job pipelines with Bull for notifications, scheduling, and data processing.',
         'Designed secure REST APIs and optimized database queries using Prisma and PostgreSQL.',
+        'Added unit and integration tests with Jest to validate business logic and ensure reliable system behavior.',
       ],
     },
     {
@@ -59,6 +63,7 @@ function Projects() {
         'Printful',
         'Prisma',
         'PostgreSQL',
+        'Jest',
       ],
       features: [
         'Implemented image generation using StabilityAI API with configurable parameters.',
@@ -66,6 +71,7 @@ function Projects() {
         'Built secure payment flow using Stripe with webhook handling for order lifecycle management.',
         'Developed scalable backend services in NestJS for sessions, orders, and third-party integrations.',
         'Optimized database performance using Prisma and PostgreSQL for handling user data and assets.',
+        'Covered core flows with unit and integration tests using Jest to improve reliability and maintainability.',
       ],
     },
   ];
