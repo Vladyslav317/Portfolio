@@ -1,29 +1,55 @@
 function Projects() {
   const projects = [
     {
-      title: 'Support Groups Platform',
+      title: 'Booking Platform',
       description:
-        'Platform for managing support groups for parents and children with real-time communication and admin tools.',
+        'Backend-driven booking system for managing services, reservations, and payments with scalable architecture.',
       tech: [
         'Node.js',
         'NestJS',
         'TypeScript',
-        'AdminJS',
-        'Prisma',
         'PostgreSQL',
-        'GetStream',
+        'Prisma',
+        'PayTabs',
+        'Brevo',
       ],
       features: [
-        'Built a custom AdminJS admin panel with React pages.',
-        'Implemented real-time chat using GetStream.',
-        'Developed group and user management functionality.',
-        'Implemented background jobs for notifications.',
+        'Applied Domain-Driven Design (DDD) and clean architecture for maintainability and scalability.',
+        'Integrated PayTabs payment gateway for secure online transactions.',
+        'Implemented email notifications and transactional messaging using Brevo.',
+        'Designed REST APIs for booking management, authorization, and admin workflows.',
+        'Improved system reliability with validation layers and structured error handling.',
       ],
     },
     {
-      title: 'AI Image Generation & Print Platform',
+      title: 'Healthcare Diagnostic Platform',
       description:
-        'B2C platform where users generate AI images and order printed versions delivered to their home.',
+        'Scalable platform focused on diagnosing conditions in children with real-time communication and automation.',
+      tech: [
+        'Node.js',
+        'TypeScript',
+        'AdminJS',
+        'GetStream',
+        'Bull',
+        'Customer.io',
+        'Prisma',
+        'PostgreSQL',
+        'AWS S3',
+        'React',
+        'Tailwind CSS',
+      ],
+      features: [
+        'Developed a custom AdminJS panel with React components for efficient user and group management.',
+        'Implemented real-time chat using GetStream for instant communication.',
+        'Integrated Customer.io for behavior-based email automation (onboarding, reminders, notifications).',
+        'Built background job pipelines with Bull for notifications, scheduling, and data processing.',
+        'Designed secure REST APIs and optimized database queries using Prisma and PostgreSQL.',
+      ],
+    },
+    {
+      title: 'Image Generation & Print Platform',
+      description:
+        'B2C platform enabling users to generate images and order printed versions with automated fulfillment and delivery.',
       tech: [
         'Node.js',
         'NestJS',
@@ -35,32 +61,11 @@ function Projects() {
         'PostgreSQL',
       ],
       features: [
-        'Integrated StabilityAI for AI image generation.',
-        'Implemented Stripe payment processing.',
-        'Integrated Printful for printing and shipping.',
-        'Developed backend order processing services.',
-      ],
-    },
-    {
-      title: 'Backend Systems (CRM & Booking Platform)',
-      description:
-        'Development of backend services for internal CRM and booking systems.',
-      tech: [
-        'Node.js',
-        'NestJS',
-        'TypeScript',
-        'Prisma',
-        'PostgreSQL',
-        'AdminJS',
-        'Passkit Generator',
-        'PayTabs',
-        'Brevo',
-      ],
-      features: [
-        'Implemented Apple Wallet and Google Wallet pass generation.',
-        'Developed backend APIs for booking workflows.',
-        'Integrated PayTabs payment gateway.',
-        'Applied Domain-Driven Design and clean architecture.',
+        'Implemented image generation using StabilityAI API with configurable parameters.',
+        'Integrated Printful API to automate product creation, order submission, tracking, and delivery.',
+        'Built secure payment flow using Stripe with webhook handling for order lifecycle management.',
+        'Developed scalable backend services in NestJS for sessions, orders, and third-party integrations.',
+        'Optimized database performance using Prisma and PostgreSQL for handling user data and assets.',
       ],
     },
   ];
