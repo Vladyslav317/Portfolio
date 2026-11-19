@@ -37,7 +37,7 @@ function About() {
               Get in Touch
             </a>
             <a
-              href='/CV_Vladyslav_Kulakov.pdf'
+              href='/CV_Vladyslav_Middle Full-Stack Developer.pdf'
               download
               className='w-full rounded-lg border border-[#6366F1] px-6 py-3 text-center text-[#6366F1] transition-all duration-300 hover:bg-[#6366F1]/10 sm:w-auto'
             >
