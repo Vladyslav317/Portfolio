@@ -13,7 +13,7 @@ function About() {
             Backend-Focused Node.js Developer
           </h3>
           <p className='mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400 sm:mb-6 sm:text-base'>
-            With over 3 years of experience in web development, I specialize in
+            With over 4 years of experience in web development, I specialize in
             building scalable and high-performance backend applications using
             JavaScript and TypeScript. My main expertise lies in Node.js, where
             I develop robust APIs and server-side systems using frameworks such
