@@ -5,6 +5,7 @@ const data = [
   { name: 'HTML/CSS', category: 'frontend' },
   { name: 'JavaScript', category: 'frontend' },
   { name: 'React', category: 'frontend' },
+  { name: 'Preact', category: 'frontend' },
   { name: 'TypeScript', category: 'frontend' },
   { name: 'Tailwind CSS', category: 'frontend' },
 
@@ -26,12 +27,14 @@ const data = [
   { name: 'VS Code', category: 'tools' },
   { name: 'AWS (S3, CI/CD)', category: 'tools' },
   { name: 'GCP (Cloud Storage)', category: 'tools' },
+  { name: 'BigQuery', category: 'tools' },
 
   { name: 'Stability AI', category: 'integrations' },
   { name: 'Nodemailer', category: 'integrations' },
   { name: 'PayTabs API', category: 'integrations' },
   { name: 'SendBird API', category: 'integrations' },
   { name: 'Printful API', category: 'integrations' },
+  { name: 'Shopify', category: 'integrations' },
 ];
 
 function Skills() {

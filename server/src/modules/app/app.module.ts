@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { APP_GUARD } from '@nestjs/core';
 import { ContactModule } from '../contact/contact.module';
 import { ConfigModule } from '@nestjs/config';
-import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 
 @Module({
   imports: [
@@ -10,15 +11,23 @@ import { ThrottlerModule } from '@nestjs/throttler';
     }),
     ThrottlerModule.forRoot([
       {
-        ttl: 60, // 1 minute
+        name: 'minute',
+        ttl: 60_000,
         limit: 3,
       },
       {
-        ttl: 3600, // 1 hour
+        name: 'hour',
+        ttl: 3_600_000,
         limit: 20,
       },
     ]),
     ContactModule,
+  ],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
   ],
 })
 export class AppModule {}

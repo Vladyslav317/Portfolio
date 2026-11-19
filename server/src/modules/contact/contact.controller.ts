@@ -7,7 +7,10 @@ import { Throttle } from '@nestjs/throttler';
 export class ContactController {
   constructor(private readonly contactService: ContactService) {}
 
-  @Throttle({ default: { limit: 3, ttl: 60000 } })
+  @Throttle({
+    minute: { limit: 3, ttl: 60_000 },
+    hour: { limit: 20, ttl: 3_600_000 },
+  })
   @Post('send-mail')
   async sendMail(
     @Body() data: SendContactMailDto,

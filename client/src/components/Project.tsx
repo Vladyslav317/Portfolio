@@ -1,6 +1,30 @@
 function Projects() {
   const projects = [
     {
+      title: 'Shopify App',
+      description:
+        'A Shopify e-commerce app with checkout extensions, a merchant UI, and an analytics platform.',
+      tech: [
+        'Node.js',
+        'NestJS',
+        'React',
+        'TypeScript',
+        'MongoDB',
+        'Prisma',
+        'Redis',
+        'Preact',
+        'Shopify',
+        'BigQuery',
+      ],
+      features: [
+        'Built checkout and thank-you extensions with Preact and Shopify APIs.',
+        'Built merchant-facing interface modules and analytics dashboards with React and TypeScript.',
+        'Queried GCP BigQuery datasets with SQL and used that data in the analytics app.',
+        'Synced analytical events from cart drawers, modal popups, and product bundles into MongoDB.',
+        'Moved heavy analytics aggregations to scheduled jobs and a Redis cache so the frontend stayed fast.',
+      ],
+    },
+    {
       title: 'Booking Platform',
       description:
         'Backend-driven booking system for managing services, reservations, and payments with scalable architecture.',
@@ -79,16 +103,13 @@ function Projects() {
   return (
     <section
       id='projects'
-      className='min-h-screen px-12 py-24 text-gray-900 dark:text-white'
+      className='min-h-screen px-4 py-16 text-gray-900 dark:text-white sm:px-6 md:px-8 lg:px-10'
     >
-      <div className='mx-auto max-w-6xl'>
-        <h2 className='mb-4 text-center text-4xl font-bold'>
+      <div className='mx-auto max-w-[1600px]'>
+        <h2 className='mb-8 text-center text-4xl font-bold'>
           Featured <span className='text-[#6366F1]'>Projects</span>
         </h2>
-        <p className='mb-16 text-center text-sm text-gray-600 dark:text-gray-400'>
-          Recent projects I contributed to as a backend-focused developer.
-        </p>
-        <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+        <div className='grid gap-6 md:grid-cols-2 xl:grid-cols-4'>
           {projects.map((project, index) => (
             <div
               key={index}

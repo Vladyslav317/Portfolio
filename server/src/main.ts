@@ -3,9 +3,8 @@ import { AppModule } from './modules/app/app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import express, { Request, Response } from 'express';
-import { ThrottlerGuard } from '@nestjs/throttler';
-
 const expressApp = express();
+expressApp.set('trust proxy', 1);
 
 async function createNestServer() {
   const app = await NestFactory.create(
@@ -27,8 +26,6 @@ async function createNestServer() {
       transform: true,
     }),
   );
-
-  app.useGlobalGuards(app.get(ThrottlerGuard));
 
   await app.init();
 }
